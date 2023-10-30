@@ -1,0 +1,29 @@
+FRIEND CLASS:
+  .Friend class can access private and protected members of other classes in which it is declared as a friend.
+
+
+
+  #include <iostream>
+using namespace std;
+class Measurments{
+    int l=2;
+    int b=3;
+public:
+friend class Rectangle;
+};
+class Rectangle
+{
+    public:
+    void area(Measurments &o)
+    {
+        cout<<"Area is :"<<(o.l*o.b)<<endl;
+    }
+};
+
+int main ()
+{
+    Measurments obj;
+    Rectangle rec;
+    rec.area(obj);
+  return 0;
+}
