@@ -27,3 +27,41 @@ int main ()
     rec.area(obj);
   return 0;
 }
+
+------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+#include <iostream>
+using namespace std;
+class B;
+class A
+{
+    int gamma;
+    public:
+    int x,y;
+    friend B;
+};
+class B
+{
+    public:
+    A obj;
+    void display()
+    {
+    obj.gamma=1;
+    obj.x=2;
+    obj.y=3;
+    
+        cout<<obj.gamma<<" "<<obj.x<<" "<<obj.y<<endl;
+    }
+};
+int main()
+{
+    B b;
+    b.display();
+    
+    return 0;
+}
